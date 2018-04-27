@@ -1,6 +1,8 @@
 import React from 'react';
+import {addTodo} from "../../../actions/todo";
+import {connect} from 'react-redux';
 
-export default class AddTodo extends React.Component{
+ class AddTodo extends React.Component{
     submit(e){
         e.preventDefault();
         this.props.onClick(this.refs.todoText.value);
@@ -17,3 +19,20 @@ export default class AddTodo extends React.Component{
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        todos: state.todos
+    }
+}
+
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onClick: (text) => {
+            dispatch(addTodo(text));
+        }
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(AddTodo)

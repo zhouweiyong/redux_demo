@@ -1,14 +1,8 @@
 import {ADD_TODO, TOGGLE_TODO} from "../constants/actionTypes";
 
 
-const defaultState=[
-    {
-        text:"第一条测试信息",
-        completed: false
-    }
-];
 
-export default function todos(state = defaultState, action) {
+export default function todos(state = [], action) {
 
     switch (action.type) {
         case ADD_TODO:

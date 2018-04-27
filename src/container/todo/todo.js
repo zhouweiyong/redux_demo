@@ -1,5 +1,5 @@
 import React from 'react';
-import AddTodoCon from "./sub/AddTodoCon";
+import AddTodo from "./sub/AddTodo";
 import ShowListCon from "./sub/ShowListCon";
 
 export default class Todo extends React.Component {
@@ -7,7 +7,7 @@ export default class Todo extends React.Component {
         return (
             <div>
                 <div>TODO LIST</div>
-                <AddTodoCon/>
+                <AddTodo/>
                 <ShowListCon/>
             </div>
         );

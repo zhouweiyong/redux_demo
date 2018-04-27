@@ -8,20 +8,20 @@ import {
     Switch
 } from 'react-router-dom'
 import {Provider} from 'react-redux';
-import {createStore} from 'redux';
 
 import registerServiceWorker from './registerServiceWorker';
 import Home from "./container/home/home";
 import MyData from "./container/mydata/myData";
 import MyInfo from "./container/myinfo/myInfo";
-import todoApp from "./reducers/todoApp";
 import {NotFund} from "./container/error/notfoud";
 import Todo from "./container/todo/todo";
+import {createAppStore} from "./store/createAppStore";
 
 
 class Index extends React.Component {
     render() {
-        const store = createStore(todoApp);
+        const store = createAppStore();
+
         return (
             <Provider store={store}>
                 <Router>
